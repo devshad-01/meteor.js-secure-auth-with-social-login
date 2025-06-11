@@ -3,12 +3,14 @@ import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
 import { useTracker } from 'meteor/react-meteor-data';
 import { ReactiveVar } from 'meteor/reactive-var';
+import { useHistory } from 'react-router-dom';
 import { showSuccessToast, showErrorToast, showWarningToast, showInfoToast } from './Toast.jsx';
 
 // Create reactive variables for persistent state (keeping for loading state)
 const isLoadingVar = new ReactiveVar(false);
 
 export const Login = () => {
+  const history = useHistory();
   const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -98,6 +100,8 @@ export const Login = () => {
             setEmail('');
             setPassword('');
             showSuccessToast('🎉 Welcome back! Successfully logged in.', 3000);
+            // Navigate to home page
+            history.push('/');
           }
         }, 100); // Small delay to ensure state updates are processed
       });
@@ -150,6 +154,8 @@ export const Login = () => {
             // Clear form on successful account creation
             resetForm();
             showSuccessToast('🎉 Account created successfully! Welcome!', 4000);
+            // Navigate to home page
+            history.push('/');
           }
         }, 100); // Small delay to ensure state updates are processed
       });

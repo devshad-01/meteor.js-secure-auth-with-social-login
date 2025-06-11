@@ -1,15 +1,19 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
+import { useHistory } from 'react-router-dom';
 import { showInfoToast } from './Toast.jsx';
 
 export const HomePage = () => {
+  const history = useHistory();
   const user = useTracker(() => Meteor.user());
 
   const handleLogout = () => {
     showInfoToast('👋 Logging out...', 2000);
     Meteor.logout(() => {
       showInfoToast('✅ You have been logged out successfully', 3000);
+      // Navigate to login page after logout
+      history.push('/login');
     });
   };
 
@@ -37,21 +41,39 @@ export const HomePage = () => {
             Hello, {user?.username || user?.emails?.[0]?.address || 'User'}!
           </p>
         </div>
-        <button
-          onClick={handleLogout}
-          style={{
-            background: 'rgba(255,255,255,0.2)',
-            color: 'white',
-            border: '1px solid rgba(255,255,255,0.3)',
-            padding: '10px 20px',
-            borderRadius: '4px',
-            cursor: 'pointer',
-            fontSize: '14px',
-            fontWeight: 'bold'
-          }}
-        >
-          Logout
-        </button>
+        
+        <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+          <button
+            onClick={() => history.push('/profile')}
+            style={{
+              background: 'rgba(255,255,255,0.2)',
+              color: 'white',
+              border: '1px solid rgba(255,255,255,0.3)',
+              padding: '10px 20px',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              fontSize: '14px',
+              fontWeight: 'bold'
+            }}
+          >
+            👤 Profile
+          </button>
+          <button
+            onClick={handleLogout}
+            style={{
+              background: 'rgba(255,255,255,0.2)',
+              color: 'white',
+              border: '1px solid rgba(255,255,255,0.3)',
+              padding: '10px 20px',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              fontSize: '14px',
+              fontWeight: 'bold'
+            }}
+          >
+            🚪 Logout
+          </button>
+        </div>
       </header>
 
       {/* Main Content */}
@@ -149,6 +171,60 @@ export const HomePage = () => {
             <p style={{ color: '#666', fontSize: '14px' }}>
               Built with React, Meteor.js 3, and modern JavaScript
             </p>
+          </div>
+        </div>
+
+        {/* Navigation Cards */}
+        <div style={{
+          background: 'white',
+          border: '1px solid #dee2e6',
+          borderRadius: '8px',
+          padding: '20px',
+          marginBottom: '20px'
+        }}>
+          <h3 style={{ color: '#333', marginBottom: '15px' }}>🧭 Navigation</h3>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '15px'
+          }}>
+            <button
+              onClick={() => history.push('/profile')}
+              style={{
+                background: '#007bff',
+                color: 'white',
+                border: 'none',
+                borderRadius: '6px',
+                padding: '15px 20px',
+                cursor: 'pointer',
+                fontSize: '16px',
+                fontWeight: 'bold',
+                transition: 'background-color 0.2s ease'
+              }}
+              onMouseOver={(e) => e.target.style.background = '#0056b3'}
+              onMouseOut={(e) => e.target.style.background = '#007bff'}
+            >
+              👤 View Profile
+            </button>
+            
+            <button
+              onClick={() => window.location.reload()}
+              style={{
+                background: '#28a745',
+                color: 'white',
+                border: 'none',
+                borderRadius: '6px',
+                padding: '15px 20px',
+                cursor: 'pointer',
+                fontSize: '16px',
+                fontWeight: 'bold',
+                transition: 'background-color 0.2s ease'
+              }}
+              onMouseOver={(e) => e.target.style.background = '#1e7e34'}
+              onMouseOut={(e) => e.target.style.background = '#28a745'}
+            >
+              🔄 Refresh Page
+            </button>
           </div>
         </div>
 
