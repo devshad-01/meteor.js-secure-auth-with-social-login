@@ -1,0 +1,9 @@
+{
+  "google": {
+    "clientId": "YOUR_GOOGLE_CLIENT_ID",
+    "secret": "YOUR_GOOGLE_CLIENT_SECRET"
+  },
+  "public": {
+    "appName": "Meteor Auth App"
+  }
+}
