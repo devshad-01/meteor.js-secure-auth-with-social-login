@@ -1,0 +1,79 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "allowJs": true,
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "/*": [
+        "./*"
+      ],
+      "meteor/mongo": [
+        "/home/shad/.meteor/packages/mongo/2.1.1/web.browser/local_collection_driver.js",
+        "/home/shad/.meteor/packages/mongo/2.1.1/web.browser/collection/collection.js",
+        "/home/shad/.meteor/packages/mongo/2.1.1/web.browser/asynchronous_cursor.js",
+        "/home/shad/.meteor/packages/mongo/2.1.1/web.browser/doc_fetcher.js",
+        "/home/shad/.meteor/packages/mongo/2.1.1/web.browser/mongo_common.js",
+        "/home/shad/.meteor/packages/mongo/2.1.1/web.browser/mongo_connection.js",
+        "/home/shad/.meteor/packages/mongo/2.1.1/web.browser/mongo_driver.js",
+        "/home/shad/.meteor/packages/mongo/2.1.1/web.browser/mongo_utils.js",
+        "/home/shad/.meteor/packages/mongo/2.1.1/web.browser/oplog_observe_driver.js",
+        "/home/shad/.meteor/packages/mongo/2.1.1/web.browser/collection/collection_utils.js",
+        "/home/shad/.meteor/packages/mongo/2.1.1/web.browser/collection/methods_async.js",
+        "/home/shad/.meteor/packages/mongo/2.1.1/web.browser/collection/methods_index.js",
+        "/home/shad/.meteor/packages/mongo/2.1.1/web.browser/collection/methods_replication.js",
+        "/home/shad/.meteor/packages/mongo/2.1.1/web.browser/collection/methods_sync.js"
+      ],
+      "meteor/reactive-var": [
+        "/home/shad/.meteor/packages/reactive-var/1.0.13/web.browser/reactive-var.js"
+      ],
+      "meteor/es5-shim": [
+        "/home/shad/.meteor/packages/es5-shim/4.8.1/web.browser/client.js",
+        "/home/shad/.meteor/packages/es5-shim/4.8.1/web.browser/console.js",
+        "/home/shad/.meteor/packages/es5-shim/4.8.1/web.browser/cordova.js",
+        "/home/shad/.meteor/packages/es5-shim/4.8.1/web.browser/export_globals.js",
+        "/home/shad/.meteor/packages/es5-shim/4.8.1/web.browser/import_globals.js"
+      ],
+      "meteor/ecmascript": [
+        "/home/shad/.meteor/packages/ecmascript/0.16.10/web.browser/ecmascript.js"
+      ],
+      "meteor/shell-server": [
+        "/home/shad/.meteor/packages/shell-server/0.6.1/web.browser/main.js",
+        "/home/shad/.meteor/packages/shell-server/0.6.1/web.browser/shell-server.js"
+      ],
+      "meteor/hot-module-replacement": [
+        "/home/shad/.meteor/packages/hot-module-replacement/0.5.4/web.browser/hot-api.js",
+        "/home/shad/.meteor/packages/hot-module-replacement/0.5.4/web.browser/client.js",
+        "/home/shad/.meteor/packages/hot-module-replacement/0.5.4/web.browser/server.js"
+      ],
+      "meteor/react-meteor-data": [
+        "/home/shad/.meteor/packages/react-meteor-data/3.0.3/web.browser/index.js",
+        "/home/shad/.meteor/packages/react-meteor-data/3.0.3/web.browser/suspense/index.js"
+      ],
+      "meteor/accounts-base": [
+        "/home/shad/.meteor/packages/accounts-base/3.1.0/web.browser/client_main.js",
+        "/home/shad/.meteor/packages/accounts-base/3.1.0/web.browser/accounts_client.js",
+        "/home/shad/.meteor/packages/accounts-base/3.1.0/web.browser/accounts_common.js",
+        "/home/shad/.meteor/packages/accounts-base/3.1.0/web.browser/accounts_server.js",
+        "/home/shad/.meteor/packages/accounts-base/3.1.0/web.browser/server_main.js"
+      ],
+      "meteor/accounts-password": [
+        "/home/shad/.meteor/packages/accounts-password/3.1.0/web.browser/password_client.js",
+        "/home/shad/.meteor/packages/accounts-password/3.1.0/web.browser/email_templates.js",
+        "/home/shad/.meteor/packages/accounts-password/3.1.0/web.browser/password_server.js"
+      ],
+      "meteor/ddp-rate-limiter": [
+        "/home/shad/.meteor/packages/ddp-rate-limiter/1.2.2/web.browser/ddp-rate-limiter.js"
+      ]
+    }
+  },
+  "typeAcquisition": {
+    "include": [
+      "meteor"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    ".meteor"
+  ]
+}
